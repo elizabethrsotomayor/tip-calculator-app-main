@@ -51,7 +51,8 @@ h1 {
   align-self: center;
   background-color: hsl(0, 0%, 100%);
   width: 70%;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   padding: 1.2rem;
   border-radius: 20px;
 }
@@ -125,6 +126,20 @@ input[type="radio"]:checked ~ span:first-of-type {
 
 .num-people {
   margin-top: 8.6rem;
+}
+
+.values {
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 20px;
+  padding: 3.2rem 2rem;
+}
+
+.value-heading {
+  color: #fff;
+}
+
+.values-subheading {
+  color: hsl(186, 14%, 43%);
 }
 
 /* input[type="radio"] {
