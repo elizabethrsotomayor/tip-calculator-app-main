@@ -132,7 +132,6 @@ input[type="radio"]:checked ~ span:first-of-type {
 .values {
   background-color: hsl(183, 100%, 15%);
   border-radius: 20px;
-  /* padding: 1.2rem 2rem; */
   padding: 0 1.2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -178,63 +177,13 @@ input[type="radio"]:checked ~ span:first-of-type {
   margin-top: 1.6rem;
 }
 
-/* .amount-value {
-  display: flex;
-  gap: 4.2rem;
-}
-
-.dollar-amount {
-  flex-grow: 2;
-}
-
-.value-headings {
-  flex-grow: 1;
-} */
-
-/* input[type="radio"] {
-  width: 6.3rem;
-  height: 3.3rem;
-  border-radius: 5px;
-  border: 2px solid hsl(183, 100%, 15%);
-  background-color: hsl(183, 100%, 15%);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  margin: 0;
-}
-
-input[type="radio"]:checked {
-  background-color: hsl(216, 12%, 54%);
-  color: white;
-}
-
-input[type="radio"]:checked ~ span:first-of-type {
-  color: white;
-}
-
-label span:first-of-type {
-  position: relative;
-  left: -4.3rem;
-  bottom: -1rem;
-  top: -1.4rem;
-  font-size: calc(24rem / 16);
-  color: #fff;
-}
-
-.tip-percents {
-  margin-right: -2.6rem;
-}
-
-.inputs {
-  width: 50%;
-} */
-
 #bill-amt {
-  background: url(../images/icon-dollar.svg) no-repeat scroll 7px 7px;
+  background: url(../../images/icon-dollar.svg) no-repeat scroll 7px 7px;
   padding-left: 20px;
 }
 
 #numPeople-amt {
-  background: url(../images/icon-person.svg) no-repeat scroll 7px 7px;
+  background: url(../../images/icon-person.svg) no-repeat scroll 7px 7px;
   padding-left: 20px;
 }
 
@@ -242,14 +191,15 @@ label span:first-of-type {
   font-family: "Space Mono";
   font-style: normal;
   font-weight: 700;
-  src: url("fonts/space-mono-v12-latin-700.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/space-mono-v12-latin-700.eot"); /* IE9 Compat Modes */
   src: local(""),
-    url("fonts/space-mono-v12-latin-700.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/space-mono-v12-latin-700.eot?#iefix")
+      format("embedded-opentype"),
     /* IE6-IE8 */ url("../fonts/space-mono-v12-latin-700.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("fonts/space-mono-v12-latin-700.woff")
+    /* Super Modern Browsers */ url("../fonts/space-mono-v12-latin-700.woff")
       format("woff"),
-    /* Modern Browsers */ url("fonts/space-mono-v12-latin-700.ttf")
+    /* Modern Browsers */ url("../fonts/space-mono-v12-latin-700.ttf")
       format("truetype"),
     /* Safari, Android, iOS */
-      url("fonts/space-mono-v12-latin-700.svg#SpaceMono") format("svg"); /* Legacy iOS */
+      url("../fonts/space-mono-v12-latin-700.svg#SpaceMono") format("svg"); /* Legacy iOS */
 }
