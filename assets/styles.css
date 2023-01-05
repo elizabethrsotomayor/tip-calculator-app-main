@@ -59,6 +59,7 @@ h1 {
 .input-label {
   display: block;
   color: hsl(184, 14%, 56%);
+  margin-top: 1.2rem;
 }
 
 .input-field {
@@ -69,10 +70,67 @@ h1 {
   padding: 0.5rem;
 }
 
+.tip-percents {
+  margin-right: -0.6rem;
+}
+
 input[type="radio"] {
-  width: 5.3rem;
+  width: 6.3rem;
   height: 3.3rem;
-  border-radius: 20px;
+  border-radius: 5px;
+  border: 2px solid hsl(183, 100%, 15%);
+  background-color: hsl(183, 100%, 15%);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin-right: -2.4rem;
+}
+
+label span:first-of-type {
+  position: relative;
+  left: -2.3rem;
+  bottom: -1rem;
+  top: -1.4rem;
+  transform: translate(-50%, -50%);
+  font-size: calc(24rem / 16);
+  color: #fff;
+}
+
+input[type="radio"]:checked {
+  background-color: hsl(216, 12%, 54%);
+  color: white;
+}
+
+input[type="radio"]:checked ~ span:first-of-type {
+  color: white;
+}
+
+.inputs {
+  width: 50%;
+}
+
+.tip-percent-btns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: -20rem;
+  position: absolute;
+  height: 5.2rem;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.tip-percents {
+  display: block;
+  margin-left: -2.3rem;
+}
+
+.num-people {
+  margin-top: 8.6rem;
+}
+
+/* input[type="radio"] {
+  width: 6.3rem;
+  height: 3.3rem;
+  border-radius: 5px;
   border: 2px solid hsl(183, 100%, 15%);
   background-color: hsl(183, 100%, 15%);
   -webkit-appearance: none;
@@ -94,9 +152,17 @@ label span:first-of-type {
   left: -4.3rem;
   bottom: -1rem;
   top: -1.4rem;
-  font-size: calc(15rem / 16);
+  font-size: calc(24rem / 16);
   color: #fff;
 }
+
+.tip-percents {
+  margin-right: -2.6rem;
+}
+
+.inputs {
+  width: 50%;
+} */
 
 #bill-amt {
   background: url(../images/icon-dollar.svg) no-repeat scroll 7px 7px;
