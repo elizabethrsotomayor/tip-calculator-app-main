@@ -72,10 +72,6 @@ h1 {
   padding: 0.5rem;
 }
 
-.tip-percents {
-  margin-right: -0.6rem;
-}
-
 input[type="radio"] {
   width: 6.3rem;
   height: 3.3rem;
@@ -123,6 +119,7 @@ input[type="radio"]:checked ~ span:first-of-type {
 .tip-percents {
   display: block;
   margin-left: -2.3rem;
+  margin-right: -0.6rem;
 }
 
 .num-people {
@@ -171,6 +168,22 @@ input[type="radio"]:checked ~ span:first-of-type {
   text-decoration: none;
   text-transform: uppercase;
   color: #0a555a;
+}
+
+.custom-input {
+  height: 3.2rem;
+  width: 4.2rem;
+  margin-left: 2rem;
+  text-align: right;
+  font-family: right;
+  grid-column-start: 4;
+}
+
+.custom-input:focus,
+.input-field:focus {
+  border-color: hsl(172, 67%, 45%);
+  box-shadow: 0 1px 1px hsl(172, 67%, 45%) inset, 0 0 8px hsl(172, 67%, 45%);
+  outline: none;
 }
 
 #total-amount {
