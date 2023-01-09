@@ -47,11 +47,11 @@ Users should be able to:
 
 ### What I learned
 
-This app is still a work in progress. I struggled with the grid layout for the radio buttons getting distorted when the type of input for the custom tip amount was changed to text, but solved the problem with the grid gap and row-gap properties.
+This app is a work in progress. I struggled with the grid layout for the radio buttons getting distorted when the type of input for the custom tip amount was changed to text, but solved the problem with changing the grid gap and row-gap properties using the handleCustomInput() function in the script.
 
 ### Continued development
 
-Work on mobile layout, reset button functionality, being able to change the custom tip amount once it's been entered.
+Work on mobile layout, being able to change the custom tip amount once it's been entered.
 
 ### Useful resources
 
