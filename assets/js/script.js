@@ -8,6 +8,7 @@ const tipBtns = document.getElementsByName("tip-percent");
 const customTip = document.getElementById("tip-percent-custom");
 const customSpan = document.getElementById("custom");
 const tipContainer = document.getElementById("tip-container");
+const inputForm = document.getElementById("input-form");
 
 billAmt.addEventListener("input", updateTotalValue);
 numPeople.addEventListener("input", splitTotal);
@@ -20,12 +21,12 @@ customTip.addEventListener("input", (e) => {
   let customInput = customTip.value;
 
   if (isNumeric(customInput)) {
-    console.log("this will print");
-
     const tipPercent = customInput / 100;
     addCustomTip(tipPercent);
   }
 });
+
+resetBtn.addEventListener("click", resetForm);
 
 function isNumeric(value) {
   return !isNaN(parseFloat(value)) && isFinite(value);
@@ -90,9 +91,22 @@ function handleCustomInput() {
 function addCustomTip(percent) {
   const curBill = +billAmt.value;
   const people = +numPeople.value;
-  const curTotal = curBill + (curBill * percent) / people;
-  const tipTotal = (curBill * percent) / people;
+  const tipAmount = curBill * percent;
 
-  totalAmt.innerText = `$${curTotal.toFixed(2)}`;
-  tipAmt.innerText = `$${tipTotal.toFixed(2)}`;
+  if (isNumeric(curBill) && isNumeric(people)) {
+    const curTotal = (curBill + tipAmount) / people;
+    const tipTotalPerPerson = tipAmount / people;
+    totalAmt.innerText = `$${curTotal.toFixed(2)}`;
+    tipAmt.innerText = `$${tipTotalPerPerson.toFixed(2)}`;
+  }
+}
+
+function resetForm() {
+  inputForm.reset();
+  totalAmt.innerText = "$0.00";
+  tipAmt.innerText = "$0.00";
+  customTip.type = "radio";
+  customSpan.style.display = "inline";
+  tipContainer.style.gap = "0.1rem";
+  tipContainer.style.rowGap = "0.1rem";
 }
