@@ -7,12 +7,24 @@ const resetBtn = document.getElementById("reset-btn");
 const tipBtns = document.getElementsByName("tip-percent");
 const customTip = document.getElementById("tip-percent-custom");
 const customSpan = document.getElementById("custom");
+const tipContainer = document.getElementById("tip-container");
 
 billAmt.addEventListener("input", updateTotalValue);
 numPeople.addEventListener("input", splitTotal);
 
 tipBtns.forEach((btn) => {
   btn.addEventListener("click", addTip);
+});
+
+customTip.addEventListener("input", (e) => {
+  let customInput = customTip.value;
+
+  if (isNumeric(customInput)) {
+    console.log("this will print");
+
+    const tipPercent = customInput / 100;
+    addCustomTip(tipPercent);
+  }
 });
 
 function isNumeric(value) {
@@ -62,9 +74,25 @@ function addTip(e) {
 }
 
 function handleCustomInput() {
+  // Change the type of custom button to text, hide the span element
   customTip.type = "text";
   customTip.value = "";
   customSpan.style.display = "none";
 
+  // Fix issue of grid buttons overlapping
+  tipContainer.style.gap = "2.6rem";
+  tipContainer.style.rowGap = "0.5rem";
+
+  // Add styling to custom input field
   customTip.classList.add("custom-input");
+}
+
+function addCustomTip(percent) {
+  const curBill = +billAmt.value;
+  const people = +numPeople.value;
+  const curTotal = curBill + (curBill * percent) / people;
+  const tipTotal = (curBill * percent) / people;
+
+  totalAmt.innerText = `$${curTotal.toFixed(2)}`;
+  tipAmt.innerText = `$${tipTotal.toFixed(2)}`;
 }

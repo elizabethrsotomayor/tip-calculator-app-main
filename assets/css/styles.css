@@ -94,7 +94,8 @@ label span:first-of-type {
 }
 
 input[type="radio"]:checked {
-  background-color: hsl(216, 12%, 54%);
+  background-color: hsl(172, 67%, 45%);
+  border: none;
   color: white;
 }
 
@@ -172,11 +173,11 @@ input[type="radio"]:checked ~ span:first-of-type {
 
 .custom-input {
   height: 3.2rem;
-  width: 4.2rem;
-  margin-left: 2rem;
+  width: 6rem;
   text-align: right;
   font-family: right;
-  grid-column-start: 4;
+  font-family: "Space Mono", monospace;
+  font-size: calc(24rem / 16);
 }
 
 .custom-input:focus,
@@ -193,6 +194,17 @@ input[type="radio"]:checked ~ span:first-of-type {
 #bill-amt {
   background: url(../../images/icon-dollar.svg) no-repeat scroll 7px 7px;
   padding-left: 20px;
+}
+
+#tip-percent-custom {
+  background-color: hsl(189, 41%, 97%);
+  border: none;
+}
+
+#custom {
+  color: hsl(184, 14%, 56%) !important;
+  left: -4rem;
+  top: -1.3rem;
 }
 
 #numPeople-amt {
