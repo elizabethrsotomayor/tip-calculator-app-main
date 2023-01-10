@@ -38,7 +38,7 @@ function updateTotalValue() {
   const billInput = +billAmt.value;
 
   if (+numPeople.value > 0) {
-    totalAmt.innerText = `${billInput / numPeople.value}`;
+    totalAmt.innerText = `$${(billInput / numPeople.value).toFixed(2)}`;
   } else if (isNumeric(billInput)) {
     totalAmt.innerText = `$${billInput.toFixed(2)}`;
   }
@@ -48,7 +48,7 @@ function splitTotal() {
   const peopleInput = +numPeople.value;
   const billInput = +billAmt.value;
 
-  if (billAmt && billAmt.value && peopleInput !== 0) {
+  if (isNumeric(billInput) && billInput > 0) {
     totalAmt.innerText = `$${(billInput / peopleInput).toFixed(2)}`;
   }
 }
