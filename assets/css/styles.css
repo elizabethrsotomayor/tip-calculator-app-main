@@ -36,6 +36,10 @@ h1 {
   overflow-wrap: break-word;
 }
 
+.heading {
+  display: none;
+}
+
 .logo {
   margin: auto;
 }
