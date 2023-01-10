@@ -17,10 +17,12 @@ tipBtns.forEach((btn) => {
   btn.addEventListener("click", addTip);
 });
 
-customTip.addEventListener("input", (e) => {
-  let customInput = customTip.value;
+customTip.addEventListener("click", handleCustomInput);
 
-  if (isNumeric(customInput)) {
+customTip.addEventListener("input", (e) => {
+  let customInput = +customTip.value;
+
+  if (isNumeric(customInput) && isNumeric(billAmt.value)) {
     const tipPercent = customInput / 100;
     addCustomTip(tipPercent);
   }
@@ -68,10 +70,6 @@ function addTip(e) {
       tipAmt.innerText = `$${tipTotal}`;
     }
   }
-
-  if (e.target.value === "custom") {
-    handleCustomInput();
-  }
 }
 
 function handleCustomInput() {
@@ -93,9 +91,11 @@ function addCustomTip(percent) {
   const people = +numPeople.value;
   const tipAmount = curBill * percent;
 
-  if (isNumeric(curBill) && isNumeric(people)) {
-    const curTotal = (curBill + tipAmount) / people;
-    const tipTotalPerPerson = tipAmount / people;
+  // Calculate values for totals
+  const curTotal = (curBill + tipAmount) / people;
+  const tipTotalPerPerson = tipAmount / people;
+
+  if (isNumeric(curTotal) && isNumeric(tipTotalPerPerson)) {
     totalAmt.innerText = `$${curTotal.toFixed(2)}`;
     tipAmt.innerText = `$${tipTotalPerPerson.toFixed(2)}`;
   }
@@ -106,6 +106,7 @@ function resetForm() {
   totalAmt.innerText = "$0.00";
   tipAmt.innerText = "$0.00";
   customTip.type = "radio";
+  customTip.classList.remove("custom-input");
   customSpan.style.display = "inline";
   tipContainer.style.gap = "0.1rem";
   tipContainer.style.rowGap = "0.1rem";
